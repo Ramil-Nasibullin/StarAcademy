@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма регистрации рекрутов</title>
+</head>
+<body>
+
+{% block form %}
+
+<h1>Добавить рекрута</h1>
+
+<form  action = "add-recrut/"  method = "post" >
+    {%  csrf_token  %}
+    {{  recrut_contact_form.as_p }}
+    <input  type = "submit"  value = "Submit"  />
+</form>
+
+{% endblock %}
+
+
+
+</body>
+</html>

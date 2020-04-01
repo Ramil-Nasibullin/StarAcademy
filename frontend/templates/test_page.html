@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тестовые испытания</title>
+</head>
+<body>
+
+{% block form %}
+
+<h1>Пройдите следующие испытания</h1>
+<form action="" method="post">
+    {% csrf_token %}
+
+
+    <table border="1" cellpadding="5px">
+        <tr>
+            <td>ID</td>
+            <td>Вопрос</td>
+            <td>Ваш ответ</td>
+        </tr>
+
+        {% for test in all_tests %}
+        <tr>
+            <td>{{ test.pk }}</td>
+            <td>{{ test.test_list }}</td>
+            <td></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+    <button type="submit">OK</button>
+
+</form>
+
+
+{% endblock %}
+
+
+
+</body>
+</html>
