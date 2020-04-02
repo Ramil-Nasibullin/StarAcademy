@@ -4,21 +4,22 @@ from . import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
 from django.views.generic import TemplateView
-from admin_panel.models import Test
+from admin_panel.models import Test # Импортируем из app admin_panel модель Test
 
 
 # Create your views here.
+
+
 class Questions(TemplateView):
     template_name = 'test_page.html'
+
     def get(self, request):
+
         all_tests = Test.objects.all()
         ctx = {
             'all_tests': all_tests
         }
         return render(request, self.template_name, ctx)
-
-
-
 
 
 def form(request):

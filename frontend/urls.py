@@ -6,7 +6,7 @@ from .views import Questions
 urlpatterns = [
     path('', views.MainView.as_view()),
     path('recrut/', views.form),
-    path('add-recrut/', views.recrut_add),
+    path('recrut/add/', views.recrut_add),
     path('test/', Questions.as_view())
 
 ]
